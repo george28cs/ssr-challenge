@@ -12,7 +12,7 @@ module.exports = {
   entry: './src/frontend/index.js',
   mode: process.env.NODE_ENV,
   output: {
-    path: isProduction ? path.join(process.cwd(), './src/server/public') : '/',
+    path: path.resolve(__dirname, 'src/server/public'),
     filename: isProduction ? 'assets/app-[hash].js' : 'assets/app.js',
     publicPath: '/',
   },
@@ -76,7 +76,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'assets/app.css',
+      filename: isProduction ? 'assets/app-[hash].css' : 'assets/app.css',
     }),
     new webpack.HotModuleReplacementPlugin(),
   ],

@@ -1,7 +1,5 @@
 const render = (html, preloadedState) => {
-  return `
-  <!DOCTYPE html>
-    <html>
+  return `<html>
       <head>
         <title>Platzi Store</title>
         <link rel="stylesheet" href="assets/app.css" type="text/css"></link>
